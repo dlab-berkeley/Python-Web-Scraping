@@ -96,3 +96,4 @@ Here are other Python workshops offered by the D-Lab:
 * [Rochelle Terman](https://github.com/rochelleterman)
 * [George McIntire](https://github.com/GeorgeMcIntire)
 * [Pratik Sachdeva](https://github.com/pssachdeva)
+* [Tom van Nuenen](https://github.com/tomvannuenen)
