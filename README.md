@@ -1,145 +1,116 @@
-# D-Lab Python Web Scraping Workshop
+Taller de Web Scraping en Python de D-Lab
 
 [![Datahub](https://img.shields.io/badge/launch-datahub-blue)](https://dlab.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-Web-Scraping&urlpath=lab%2Ftree%2FPython-Web-Scraping%2F&branch=main)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dlab-berkeley/Python-Web-Scraping/HEAD)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-This repository contains the materials for D-Lab’s Python Web Scraping Workshop.
+Este repositorio contiene los materiales para el taller de raspado web de Python de D-Lab.
 
-## Prerequisites
+## Requisitos previos
 
-We recommend attending [Python Fundamentals](https://github.com/dlab-berkeley/python-fundamentals) and [Python Data Wrangling](https://github.com/dlab-berkeley/Python-Data-Wrangling/) prior to this workshop. We additionally recommend a basic understanding of HTML and CSS.
+Recomendamos asistir a [Fundamentos de Python](https://github.com/dlab-berkeley/python-fundamentals) y [Organización de datos de Python](https://github.com/dlab-berkeley/Python-Data-Wrangling/) antes de este taller. Además, recomendamos una comprensión básica de HTML y CSS.
 
-Check out D-Lab’s [Workshop Catalog](https://dlab-berkeley.github.io/dlab-workshops/) to browse all workshops, see what’s running now, and review prerequisites.
+Consulte el [Catálogo de talleres] (https://dlab-berkeley.github.io/dlab-workshops/) de D-Lab para explorar todos los talleres, ver lo que se está ejecutando ahora y revisar los requisitos previos.
 
+## Objetivos del taller
 
-## Workshop Goals
+En este taller, cubrimos cómo extraer datos de la web usando Python. 
+El raspado implica descargar el código fuente de una página web y examinar el archivo material para extraer los datos deseados.
 
-In this workshop, we cover how to scrape data from the web using Python. Web
-scraping involves downloading a webpage's source code and sifting through the
-material to extract desired data.
+El Web Scraping generalmente solo se realiza cuando las API web no están disponibles. Plataformas como Twitter, Reddit o The New York Times ofrecen API para recuperar datos. Si usted desea aprender a usar las API web en Python, consulte [Python Web APIs](https://github.com/dlab-berkeley/Python-Web-APIs).
 
-Web scraping is typically only done when Web APIs are not available. Platforms
-like Twitter, Reddit, or The New York Times offer APIs to retrieve data. If you
-want to learn how to use web APIs in Python, see D-Lab's [Python Web
-APIs](https://github.com/dlab-berkeley/Python-Web-APIs) workshop.
+## Instrucciones de instalación
 
-## Installation Instructions
+Anaconda es un útil software de gestión de paquetes que permite ejecutar Python
+y cuadernos Jupyter fácilmente. Instalar Anaconda es la forma más fácil de hacer
+Seguro que tienes todo el software necesario para ejecutar los materiales para este taller. Si desea ejecutar Python en su propia computadora, complete lo siguiente
 
-Anaconda is a useful package management software that allows you to run Python
-and Jupyter notebooks easily. Installing Anaconda is the easiest way to make
-sure you have all the necessary software to run the materials for this workshop.
-If you would like to run Python on your own computer, complete the following
-steps prior to the workshop:
+Pasos previos al taller:
 
-1. [Download and install Anaconda (Python 3.9
-   distribution)](https://www.anaconda.com/products/individual). Click the
-   "Download" button.
+1. [Descargue e instale Anaconda (Python 3.9
+distribución)](https://www.anaconda.com/products/individual). Haga clic en el icono
+Botón "Descargar".
 
-2. Download the Python Web Scraping [workshop
-   materials](https://github.com/dlab-berkeley/Python-Web-Scraping):
+2. Descargue el [taller] Python Web Scraping
+materiales](https://github.com/dlab-berkeley/Python-Web-Scraping):
 
-   -   Click the green "Code" button in the top right of the repository
-        information.
-   -   Click "Download Zip".
-   -   Extract this file to a folder on your computer where you can easily
-        access it (we recommend Desktop).
+   - Haga clic en el botón verde "Código" en la parte superior derecha del repositorio
+información.
+   - Haga clic en "Descargar Zip".
+   - Extraiga este archivo a una carpeta en su computadora donde pueda fácilmente
+acceder a él (recomendamos Escritorio).
 
-3. Optional: if you're familiar with `git`, you can instead clone this
-   repository by opening a terminal and entering the command `git clone
-   git@github.com:dlab-berkeley/Python-Web-Scraping.git`.
+3. Opcional: si estás familiarizado con 'git', puedes clonarlo
+repositorio abriendo una terminal e ingresando el comando 'git clone
+git@github.com:dlab-berkeley/Python-Web-Scraping.git'.
 
+## ¿Python no funciona en su computadora?
 
-## Is Python Not Working on Your Computer?
+Si no tiene Anaconda instalada y los materiales cargados en su taller
+para cuando comience,  recomendamos *encarecidamente* usar el centro de datos de UC Berkeley para ejecutar los materiales para estas lecciones. Puede acceder al DataHub haciendo clic en este botón: 
 
-If you do not have Anaconda installed and the materials loaded on your workshop
-by the time it starts, we *strongly* recommend using the UC Berkeley Datahub to
-run the materials for these lessons. You can access the DataHub by clicking this
-button: 
+[![ Centro de datos](https://img.shields.io/badge/launch-datahub-blue)](https://dlab.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-Web-Scraping&urlpath=lab%2Ftree%2FPython-Web-Scraping%2F&branch=main)
 
-[![Datahub](https://img.shields.io/badge/launch-datahub-blue)](https://dlab.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fdlab-berkeley%2FPython-Web-Scraping&urlpath=lab%2Ftree%2FPython-Web-Scraping%2F&branch=main)
+El DataHub descarga este repositorio, junto con los paquetes necesarios, y
+le permite ejecutar los materiales en un cuaderno de Jupyter que se almacena en UC de los servidores de Berkeley. No es necesaria ninguna instalación por su parte, solo necesita un navegador de Internet y una identificación de CalNet para iniciar sesión. Al usar DataHub, puede Guarde su trabajo y vuelva a él en cualquier momento. Cuando quieras volver a tu trabajo guardado, simplemente vaya directamente a [DataHub] (https://datahub.berkeley.edu), firme y haga clic en la  carpeta 'Python-Web-Scraping'.
 
-The DataHub downloads this repository, along with any necessary packages, and
-allows you to run the materials in a Jupyter notebook that is stored on UC
-Berkeley's servers. No installation is necessary from your end - you only need
-an internet browser and a CalNet ID to log in. By using the DataHub, you can
-save your work and come back to it at any time. When you want to return to your
-saved work, just go straight to [DataHub](https://datahub.berkeley.edu), sign
-in, and you click on the `Python-Web-Scraping` folder.
-
-If you don't have a Berkeley CalNet ID, you can still run these lessons in the
-cloud, by clicking this button:
+Si no tiene una identificación de Berkeley CalNet, aún puede ejecutar estas lecciones en el cloud, haciendo clic en este botón:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dlab-berkeley/Python-Web-Scraping/HEAD)
 
-By using this button, however, you cannot save your work.
+Sin embargo, al usar este botón, no puede guardar su trabajo.
 
-## Run the code
+## Ejecuta el código
 
-1. Open the Anaconda Navigator application. You should see the green snake logo
-   appear on your screen. Note that this can take a few minutes to load up the
-   first time. 
+1. Abra la aplicación Anaconda Navigator. Deberías ver el logotipo de la serpiente verde en tu pantalla. Tenga en cuenta que esto puede tardar unos minutos en cargar el archivo primera vez. 
 
-2. Click the "Launch" button under "Jupyter Notebooks" and navigate through your
-   file system to the `Python-Web-Scraping` folder you downloaded above.  Note
-   that, if you download the materials from GitHub, the folder name may instead
-   be `Python-Text-Analysis-main`.
+2. Haga clic en el botón "Iniciar" debajo de "Jupyter Notebooks" y navegue por su
+ sistema de archivos a la  carpeta 'Python-Web-Scraping' que descargó anteriormente.  Nota que, si descarga los materiales de GitHub, el nombre de la carpeta puede en su lugar ser 'Python-Text-Analysis-main'.
 
-3. Open the `lessons` folder, and click `01_introduction.md` to begin.
+3. Abra la  carpeta 'lecciones' y haga clic en '01_introduction.md' para comenzar.
 
-4. Press Shift + Enter (or Ctrl + Enter) to run a cell.
+4. Presione Mayús + Entrar (o Ctrl + Entrar) para ejecutar una celda.
 
-5. By default, the necessary packages for this workshop should already be
-   installed. You can install them within the Jupyter notebook by running the
-   following line in its own cell:
+5. Por defecto, los paquetes necesarios para este taller ya deberían estar
+Instalado. Puede instalarlos en el cuaderno de Jupyter Notebook ejecutando el comando siguiente línea en su propia celda:
 
-> ```%pip install -r requirements.txt```
+> '''%pip install -r requirements.txt'''
 
-Note that all of the above steps can be run from the terminal, if you're
-familiar with how to interact with Anaconda in that fashion. However, using
-Anaconda Navigator is the easiest way to get started if this is your first time
-working with Anaconda.
+Tenga en cuenta que todos los pasos anteriores se pueden ejecutar desde la terminal, si está familiarizado con cómo interactuar con Anaconda de esa manera. Sin embargo, el uso de Anaconda Navigator es la forma más fácil de comenzar si es tu primera vez trabajando con Anaconda.
 
-# About the UC Berkeley D-Lab
+# Acerca del D-Lab de UC Berkeley
 
-D-Lab works with Berkeley faculty, research staff, and students to advance
-data-intensive social science and humanities research. Our goal at D-Lab is to
-provide practical training, staff support, resources, and space to enable you to
-use R for your own research applications. Our services cater to all skill levels
-and no programming, statistical, or computer science backgrounds are necessary.
-We offer these services in the form of workshops, one-to-one consulting, and
-working groups that cover a variety of research topics, digital tools, and
-programming languages.  
+D-Lab trabaja con profesores, personal de investigación y estudiantes de Berkeley para avanzar investigación intensiva en ciencias sociales y humanidades con uso intensivo de datos. Nuestro objetivo en D-Lab es proporcionar capacitación práctica, apoyo del personal, recursos y espacio para permitirle
+use R para sus propias aplicaciones de investigación. Nuestros servicios se adaptan a todos los niveles de habilidad y no se necesitan antecedentes en programación, estadística o informática.
+Ofrecemos estos servicios en forma de talleres, consultoría personalizada y
+grupos de trabajo que cubren una variedad de temas de investigación, herramientas digitales y lenguajes de programación.
 
-Visit the [D-Lab homepage](https://dlab.berkeley.edu/) to learn more about us.
-You can view our [calendar](https://dlab.berkeley.edu/events/calendar) for
-upcoming events, learn about how to utilize our
-[consulting](https://dlab.berkeley.edu/consulting) and [data
-services](https://dlab.berkeley.edu/data), and check out upcoming
-[workshops](https://dlab.berkeley.edu/events/workshops). Subscribe to our
-[newsletter](https://dlab.berkeley.edu/news/weekly-newsletter) to stay up to
-date on D-Lab events, services, and opportunities.
+Visite la [página de inicio de D-Lab](https://dlab.berkeley.edu/) para obtener más información sobre nosotros. Puede ver nuestro [calendario](https://dlab.berkeley.edu/events/calendar) para
+próximos eventos, aprenda cómo utilizar nuestros
+[consultoría](https://dlab.berkeley.edu/consulting) y [datos
+servicios](https://dlab.berkeley.edu/data), y echa un vistazo a los próximos
+[talleres](https://dlab.berkeley.edu/events/workshops). Suscríbete a nuestro
+[newsletter](https://dlab.berkeley.edu/news/weekly-newsletter) para mantenerse al día fecha en eventos, servicios y oportunidades de D-Lab.
 
-# Other D-Lab Python Workshops
+# Otros talleres de D-Lab Python
 
-D-Lab offers a variety of Python workshops, catered toward different levels of
-expertise.
+D-Lab ofrece una variedad de talleres de Python, dirigidos a diferentes niveles de pericia.
 
-## Introductory Workshops
+## Talleres introductorios
 
--  [Python Fundamentals](https://github.com/dlab-berkeley/Python-Fundamentals)
--  [Python Data Wrangling](https://github.com/dlab-berkeley/Python-Data-Wrangling)
--  [Python Data Visualization](https://github.com/dlab-berkeley/Python-Data-Visualization)
+- [Fundamentos de Python](https://github.com/dlab-berkeley/Python-Fundamentals)
+- [Manejo de datos de Python](https://github.com/dlab-berkeley/Python-Data-Wrangling)
+- [Visualización de datos de Python](https://github.com/dlab-berkeley/Python-Data-Visualization)
 
-## Intermediate and Advanced Workshops
+## Talleres intermedios y avanzados
 
--  [Python Geospatial Fundamentals](https://github.com/dlab-berkeley/Geospatial-Data-and-Mapping-in-Python)
--  [Python Web Scraping and APIs](https://github.com/dlab-berkeley/Python-Web-Scraping)
--  [Python Machine Learning](https://github.com/dlab-berkeley/Python-Machine-Learning)
--  [Python Text Analysis](https://github.com/dlab-berkeley/Python-Text-Analysis)
--  [Python Deep Learning](https://github.com/dlab-berkeley/Python-Deep-Learning)
+- [Fundamentos geoespaciales de Python](https://github.com/dlab-berkeley/Geospatial-Data-and-Mapping-in-Python)
+- [Raspado web y API de Python](https://github.com/dlab-berkeley/Python-Web-Scraping)
+- [Aprendizaje automático de Python](https://github.com/dlab-berkeley/Python-Machine-Learning)
+- [Análisis de texto de Python](https://github.com/dlab-berkeley/Python-Text-Analysis)
+- [Aprendizaje profundo de Python](https://github.com/dlab-berkeley/Python-Deep-Learning)
 
-# Contributors
+# Colaboradores
 
 * [Rochelle Terman](https://github.com/rochelleterman)
 * [George McIntire](https://github.com/GeorgeMcIntire)
